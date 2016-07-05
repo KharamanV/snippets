@@ -1,0 +1,13 @@
+<!--[if mso]>
+ <center>
+ <table><tr><td width="580">
+<![endif]-->
+ <div style="max-width:580px; margin:0 auto;">
+ 
+ <p>This text will be centered and constrained to 580 pixels even on Outlook which does not support max-width CSS</p>
+ 
+ </div>
+<!--[if mso]>
+ </td></tr></table>
+ </center>
+<![endif]--> 

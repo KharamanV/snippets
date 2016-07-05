@@ -1,0 +1,96 @@
+//Colors
+$nav-bg-color: #ccc;
+//Sizes
+$menu-width: 200px;
+$nav-height: 50px;
+
+html,
+body {
+  height: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    display: inline-block;
+  }  
+}
+
+.disable-scroll {
+  overflow-y: hidden;
+}
+
+.wrapper {
+  &.active {
+    height: 100%;
+    .menu {
+      transform: translateX(0);
+      transition: all .3s ease;
+    }
+    .mask {
+      z-index: 1;
+      opacity: 1;
+    }
+    .navigation {
+     position: static;
+    }
+    .main-content {
+      margin-top: -$nav-height;
+      overflow-y: hidden;
+    }
+  }
+}
+
+.navigation {
+  background-color: $nav-bg-color;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  height: $nav-height;
+  line-height: $nav-height;
+}
+
+.btn-canvas {
+  float: left;
+  display: none;
+}
+
+.menu {
+  float: right;
+}
+
+.mask {
+  opacity: 0;
+  z-index: -1;
+  width: 100%;
+  position: fixed;
+  transition: .3s all ease;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+}
+
+.main-content {
+  padding-top: $nav-height;
+}
+
+@media (max-width: 500px) {
+  .btn-canvas {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    transform: translateX(-$menu-width);
+    width: $menu-width;
+    background-color: darken($nav-bg-color, 10%);
+    z-index: 10;
+    li {
+      display: block;
+    }
+  }
+}
