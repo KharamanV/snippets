@@ -1,0 +1,1 @@
+$config['base_url'] = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['SERVER_NAME'] . '/';
